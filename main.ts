@@ -22,11 +22,20 @@ getTemporadasPromedio(series);
 function mostrarSeries(series: Serie[]): void {
     let tbodySerie = document.createElement("tbody");
     
+    // encabezados
+    let encabezados: HTMLElement = document.createElement("tr")
+    encabezados.innerHTML = `<th>#</th>
+    <th>Name</th>
+    <th>Channel</th>
+    <th>Seasons</th>`;
+
+    tbodySerie.appendChild(encabezados);
+
     for (let serie of series) {
         let trElement: HTMLElement = document.createElement("tr");
 
         trElement.innerHTML = `<td><b>${serie.id}</b></td>
-        <td>${serie.nombre}</td>
+        <td><a href="">${serie.nombre}</a></td>
         <td>${serie.canal}</td>
         <td>${serie.numero_temporadas}</td>`
 

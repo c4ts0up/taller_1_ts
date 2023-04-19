@@ -1,6 +1,6 @@
 import { series } from './data.js';
 console.log(series);
-var seriesTable = document.getElementById("series");
+var seriesTable = document.getElementById("tablaSeries");
 var temporadasPromedio = document.getElementById("temporadasPromedio");
 /**
  * Ejecución de funciones
@@ -13,10 +13,14 @@ getTemporadasPromedio(series);
  */
 function mostrarSeries(series) {
     var tbodySerie = document.createElement("tbody");
+    // encabezados
+    var encabezados = document.createElement("tr");
+    encabezados.innerHTML = "<th>#</th>\n    <th>Name</th>\n    <th>Channel</th>\n    <th>Seasons</th>";
+    tbodySerie.appendChild(encabezados);
     for (var _i = 0, series_1 = series; _i < series_1.length; _i++) {
         var serie = series_1[_i];
         var trElement = document.createElement("tr");
-        trElement.innerHTML = "<td><b>".concat(serie.id, "</b></td>\n        <td>").concat(serie.nombre, "</td>\n        <td>").concat(serie.canal, "</td>\n        <td>").concat(serie.numero_temporadas, "</td>");
+        trElement.innerHTML = "<td><b>".concat(serie.id, "</b></td>\n        <td><a href=\"\">").concat(serie.nombre, "</a></td>\n        <td>").concat(serie.canal, "</td>\n        <td>").concat(serie.numero_temporadas, "</td>");
         tbodySerie.appendChild(trElement);
     }
     seriesTable.appendChild(tbodySerie);
