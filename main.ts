@@ -3,7 +3,7 @@ import {Serie} from './serie';
 
 console.log(series);
 
-let seriesTable: HTMLElement = document.getElementById("series")!;
+let seriesTable: HTMLElement = document.getElementById("tablaSeries")!;
 let temporadasPromedio: HTMLElement = document.getElementById("temporadasPromedio")!;
 
 
